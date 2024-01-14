@@ -158,5 +158,5 @@ console.log(misProductos);
 
 // productManager.deleteProduct(2);
 
-misProductos = productManager.getProducts();
-console.log(misProductos)
+// misProductos = productManager.getProducts();
+// console.log(misProductos)
