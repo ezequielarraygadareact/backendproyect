@@ -1,0 +1,12 @@
+{
+  "name": "backendproyect",
+  "version": "1.0.0",
+  "description": "",
+  "main": "desafio1.js",
+  "scripts": {
+    "start": "node ./desafio3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
