@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon ./Preentrega1/app.js"
+    "start": "node ./Preentrega1/src/app.js"
   },
   "keywords": [],
   "author": "",

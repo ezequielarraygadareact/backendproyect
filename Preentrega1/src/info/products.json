@@ -1,14 +1,14 @@
 [
 {
- "id": 1,
- "title": "Alimento para perros 20kg",
- "description": "Sabor carne",
- "price": "$ 2500",
- "thumbail": "Link de la foto",
- "code": "code1",
- "stock": "5",
- "category": "Alimentos",
- "status": "Disponible"
+    "id": 1,
+    "title": "Alimento para perros 20kg",
+    "description": "Sabor carne",
+    "price": "$ 2500",
+    "thumbail": "Link de la foto",
+    "code": "code1",
+    "stock": "5",
+    "category": "Alimentos",
+    "status": "Disponible"
 },
 {
     "id": 2,
@@ -20,8 +20,8 @@
     "stock": "8",
     "category": "Alimentos",
     "status": "Disponible"
-   },
-   {
+},
+{
     "id": 3,
     "title": "Alimento para gatos 15kg",
     "description": "Sabor pescado",
@@ -31,8 +31,8 @@
     "stock": "15",
     "category": "Alimentos",
     "status": "Disponible"
-   },
-   {
+},
+{
     "id": 4,
     "title": "Anticonceptivos",
     "description": "Para gatos y perros",
@@ -42,8 +42,8 @@
     "stock": "16",
     "category": "Medicación",
     "status": "Disponible"
-   },
-   {
+},
+{
     "id": 5,
     "title": "Enrop Plus",
     "description": "Antibioticos",
@@ -53,8 +53,8 @@
     "stock": "4",
     "category": "Medicación",
     "status": "Disponible"
-   },
-   {
+},
+{
     "id": 6,
     "title": "Pipetas",
     "description": "Para perros grandes",
@@ -64,5 +64,5 @@
     "stock": "0",
     "category": "Higiene",
     "status": "No disponible"
-   }
+}
 ]

@@ -83,21 +83,22 @@ export class ProductManager {
             console.log("No se encontro el producto");
         }  
     };
+    
+    updateProduct(id, productUpdate) {
+        this.getProducts();
+        const productId = this.products.find (product => product.id === id);
+        if (productId) {
+            const Index = this.products.findIndex (product => product.id === id);
+            this.products[Index] = {id, ...productUpdate};
+            try {
+                fs.writeFileSync(this.path, JSON.stringify(this.products));
+                console.log("Se actualizo el archivo")    
+            } catch (error) {
+                console.error("No se pudo actualizar", error)
+            }
+        } else {
+            console.log("No se encontro el producto");
+        }
+    };
 };
 
-updateProduct(id, productUpdate) {
-    this.getProducts();
-    const productId = this.products.find (product => product.id === id);
-    if (productId) {
-        const Index = this.products.findIndex (product => product.id === id);
-        this.products[Index] = {id, ...productUpdate};
-        try {
-            fs.writeFileSync(this.path, JSON.stringify(this.products));
-            console.log("Se actualizo el archivo")    
-        } catch (error) {
-            console.error("No se pudo actualizar", error)
-        }
-    } else {
-        console.log("No se encontro el producto");
-    }   
-};

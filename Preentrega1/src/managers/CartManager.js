@@ -1,9 +1,9 @@
 import fs from "fs"
-import { productManager } from './app.js';
+import { productManager } from '../app.js';
 
 export class CartManager {
     constructor () {
-    this.path = "./src/info/carts.json";
+    this.path = "./Preentrega1/src/info/carts.json";
     };
 
     getCarts(){

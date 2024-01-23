@@ -1,13 +1,14 @@
-import express from 'express';
+import  express from 'express';
 import { ProductManager } from './managers/ProductManager.js';
 import { CartManager } from './managers/CartManager.js';
-import productsRouter from './rutas/products.router.js';
+import productsRouter from './rutas/pruduct.router.js';
 import cartsRouter from './rutas/carts.router.js';
 
 
 const PORT = 8080;
-const PATH_PRODUCTS = './src/info/products.json';
-const PATH_CARTS = './src/info/carts.json';
+const PATH_PRODUCTS = './Preentrega1/src/info/products.json';
+const PATH_CARTS = './Preentrega1/src/info/carts.json';
+
 
 const app = express();
 export const productManager = new ProductManager(PATH_PRODUCTS);
