@@ -3,15 +3,6 @@ import { cartManager } from '../app.js';
 
 const router = express.Router()
 
-router.get("/:cid", async (req, res) => {
-    try {
-        const id = parseInt(req.params.cid);
-        const cart = await cartManager.getCartById(id);
-        res.json( { status: 'success', payload: cart });
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-})
 
 router.post('/', async (req, res) => {
     try {
@@ -21,6 +12,16 @@ router.post('/', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
+
+router.get("/:cid", async (req, res) => {
+    try {
+        const id = parseInt(req.params.cid);
+        const cart = await cartManager.getCartById(id);
+        res.json( { status: 'success', payload: cart });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+})
 
 router.post('/:cid/product/:pid', async (req, res) => {
     try {

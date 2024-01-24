@@ -4,7 +4,7 @@ import { productManager } from '../app.js';
 const router = express.Router()
 
 router.get('/', async (req, res) => {
-    try {
+    try  {
         const limit = parseInt(req.query.limit);
         const products = await productManager.getProducts();
         if (!isNaN(limit) && limit > 0) {

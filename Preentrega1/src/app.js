@@ -14,8 +14,8 @@ const app = express();
 export const productManager = new ProductManager(PATH_PRODUCTS);
 export const cartManager = new CartManager(PATH_CARTS);
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use('/api/products', productsRouter);
 app.use('/api/carts', cartsRouter);
 
