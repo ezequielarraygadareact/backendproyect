@@ -4,6 +4,21 @@ import { cartManager } from '../app.js';
 const router = express.Router()
 
 
+router.get('/', async (req, res) => {
+    try  {
+        const limit = parseInt(req.query.limit);
+        const carts = await cartManager.getCarts();
+        if (!isNaN(limit) && limit > 0) {
+            const showCarts = carts.slice(0, limit)
+            res.json(showCarts)
+        } else {
+            res.json(carts)
+        }
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
 router.post('/', async (req, res) => {
     try {
         const newCart = await cartManager.addCart();
@@ -21,7 +36,7 @@ router.get("/:cid", async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
-})
+});
 
 router.post('/:cid/product/:pid', async (req, res) => {
     try {
