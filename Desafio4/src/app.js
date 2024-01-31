@@ -2,7 +2,7 @@ import  express from 'express';
 import { ProductManager } from './managers/ProductManager.js';
 import routerViews from"./rutas/views.router.js";
 import routerRealTimesProducts from"./rutas/realTimeProducts.router.js";
-import handlebars from 'express-handlebars';
+import handlebars from 'express-handlebars'
 import {Server} from 'socket.io';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
