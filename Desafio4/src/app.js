@@ -27,9 +27,12 @@ app.engine("handlebars", handlebars.engine())
 app.set("views", __dirname + '/views') 
 app.set('view engine', "handlebars")
 
+
 //Rutas
 app.use("/" ,routerViews)
 app.use("/realTimeProducts" , routerRealTimesProducts)
+
+const httpServer = app.listen(PORT, () => console.log("Servidor iniciado"))
 
 //Socket
 const socketServer = new Server(httpServer) 
@@ -74,10 +77,11 @@ socketServer.on("connection" , (socket) => {
             const deleteProduct = p.deleteProduct(pid)
             const updatedListProd = p.getProducts()
             socketServer.emit("products", updatedListProd)
-            socketServer.emit('response', { status: 'success' , message: "producto eliminado correctamente"});
+            socketServer.emit('response', { status: 'success' , message:  `Se ah eliminado el producto de ID:${pid}`});
         } catch (error) {
             socketServer.emit('response', { status: 'error', message: error.message });
         }
     } )
 
 })
+
