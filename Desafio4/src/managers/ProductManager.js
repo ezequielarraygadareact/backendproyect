@@ -58,7 +58,7 @@ export class ProductManager {
     
         try {
             fs.writeFileSync(this.path, JSON.stringify(this.products));
-            console.log("Producto guaradado");
+            console.log("Producto guardado");
             return newProduct;
         } catch (error) {
             console.error("No se pudo guardar el producto", error);
