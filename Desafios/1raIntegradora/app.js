@@ -17,23 +17,20 @@ const app = express();
 const port = 8080;
 
 
-//Handlebars
 app.engine("handlebars", handlebars.engine())
 app.set("views", __dirname + '/views') 
 app.set('views engine', "handlebars")
 app.use(express.static(__dirname + '/views'))
 app.use(express.static(path.join(__dirname, "public")))
 
-//Midlewares
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-//Routes
 app.use('/api/products', productRouter);
 app.use('/api/carts', cartRouter);
 app.use('/api/chat', chatRouter);
 
-const httpServer = app.listen(port, () => console.log("Servidor conectado (Express)"))
+const httpServer = app.listen(port, () => console.log("Conectado"))
 
 //socket.io
 const io = new Server(httpServer);
@@ -66,7 +63,7 @@ io.on("connection", (socket)=>{
 
 
 
-mongoose.connect("mongodb+srv://EArraygada:Nico1993@arraygada1.vpmhvb3.mongodb.net/?retryWrites=true&w=majority&appName=Arraygada1")
+mongoose.connect("mongodb+srv://EArraygada:Nico1993@arraygada1.vpmhvb3.mongodb.net/DB?retryWrites=true&w=majority&appName=Arraygada1")
 .then (() => {
     console.log ("Conectado a la DB correctamente")
 })
