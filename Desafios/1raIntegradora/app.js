@@ -63,7 +63,7 @@ io.on("connection", (socket)=>{
 
 
 
-mongoose.connect("mongodb+srv://EArraygada:Nico1993@arraygada1.vpmhvb3.mongodb.net/?retryWrites=true&w=majority&appName=Arraygada1")
+mongoose.connect("mongodb+srv://EArraygada:Nico1993@arraygada1.vpmhvb3.mongodb.net/DB?retryWrites=true&w=majority&appName=Arraygada1")
 .then (() => {
     console.log ("Conectado a la DB correctamente")
 })

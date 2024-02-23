@@ -5,7 +5,7 @@ export class CartManagerMongo {
     constructor(){
         this.model = cartModel
     }
-    //Mostrar carritos
+
     async getCarts(){
         try {
             return await this.model.find({})   
@@ -13,18 +13,18 @@ export class CartManagerMongo {
             console.error("Error al mostrar carritos", error);
         }
     }
-    //Mostrar un carrito por id
+
     async getCart(cid){
         return await this.model.findOne({_id: cid})
     }
-    //Agregar un carrito nuevo
+
     async addCart(){
         const newCart = {
             products: []
         };
         return await this.model.create(newCart)
     }
-    //Agregar un determinado producto a un determinado carrito
+
     async addToCart(cid, pid) {
         try {
             const cartExists = await this.model.findOne({ _id: cid });
@@ -37,16 +37,16 @@ export class CartManagerMongo {
                 throw new Error(`No se encontró el producto con id ${pid}`);
             }
     
-            // Buscar el producto en el carrito
+
 
             const existingProduct = cartExists.product.find(product => product.productId.toString() === pid.toString());
            
             if (existingProduct) {
-                // Si el producto ya está en el carrito, aumentar la cantidad
+
                 existingProduct.quantity++;
             } else {
-                // Si el producto no está en el carrito, agregarlo
-               
+
+                
                 cartExists.product.push({
                     productId: pid,
                     product: productExists,
@@ -61,7 +61,7 @@ export class CartManagerMongo {
             
         }
     }
-    //Borrar un determinado producto de un determinado carrito
+
     async deleteProduct(pid, cid) {
         try {
             const cart = await this.model.findById(cid);
